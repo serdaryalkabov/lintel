@@ -66,7 +66,7 @@ export class AnalysisPipeline {
         totalFindings: finalFindings.length,
         highestSeverity: this.getHighestSeverity(finalFindings),
       };
-    } catch (error) {
+    } catch(error) {
       console.error("Analysis pipeline error:", error);
       throw error;
     }
@@ -172,7 +172,7 @@ export class AnalysisPipeline {
     const cleaned = text.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
     try {
       return JSON.parse(cleaned);
-    } catch (error) {
+    } catch {
       console.error("Failed to parse JSON:", cleaned);
       throw new Error("Failed to parse AI response as JSON");
     }

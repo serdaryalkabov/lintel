@@ -35,7 +35,6 @@ export function LoadingState({ currentStep }: LoadingStateProps) {
           {steps.map((step, index) => {
             const isComplete = index < currentIndex;
             const isCurrent = index === currentIndex;
-            const isPending = index > currentIndex;
 
             return (
               <motion.div
